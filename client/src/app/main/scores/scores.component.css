@@ -1,0 +1,25 @@
+.top {
+    width: 40%;
+    margin: auto;
+    border: 1px solid black;
+    background-color: lightgrey;
+    text-align: center;
+    padding: 2%;
+}
+
+.table {
+    width: 60%;
+    margin: auto;
+    text-align: center;
+}
+    th, td {
+        text-align: center;
+    }
+
+.message {
+    background-color: green;
+    color: white;
+    margin: 2% auto;
+    width: 80%;
+
+}

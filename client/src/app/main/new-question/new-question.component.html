@@ -1,0 +1,43 @@
+<h1>New Question</h1>
+<form (submit)="addQuestion()" #qForm="ngForm">
+  <div class="form-group">
+    <div class="col-sm-3"><label>Question</label></div>
+    <div class="col-sm-9">
+      <textarea name="question" class="form-control" [(ngModel)]="trivia.question" #question="ngModel" required minlength="15"></textarea>
+    </div>
+  </div>
+  <br>
+  <span class="error" *ngIf="question.errors && (question.dirty || question.touched)"><span *ngIf="question.errors.required">Question is required</span><span *ngIf="question.errors.minlength">Question must be at least 15 characters</span></span>
+  <br>
+  <div class="form-group">
+    <div class="col-sm-3"><label>Correct Answer</label></div>
+    <div class="col-sm-9">
+      <input type="text" name="answer" class="form-control" [(ngModel)]="trivia.answer" #answer="ngModel" required>
+    </div>
+  </div>
+  <br>
+  <span class="error" *ngIf="answer.errors && (answer.dirty || answer.touched)">Response must be provided</span>
+  <br>
+  <div class="form-group">
+    <div class="col-sm-3"><label>Fake Answer 1</label></div>
+    <div class="col-sm-9">
+      <input type="text" name="fake1" class="form-control" [(ngModel)]="trivia.fakeAnswer1" #fake1="ngModel" required>
+    </div>
+  </div>
+  <br>
+  <span class="error" *ngIf="fake1.errors && (fake1.dirty || fake1.touched)">Response must be provided</span>
+  <br>
+  <div class="form-group">
+    <div class="col-sm-3"><label>Fake Answer 2</label></div>
+    <div class="col-sm-9">
+      <input type="text" name="fake2" class="form-control" [(ngModel)]="trivia.fakeAnswer2" #fake2="ngModel" required>
+    </div>
+  </div>
+  <br>
+  <span class="error" *ngIf="fake2.errors && (fake2.dirty || fake2.touched)">Response must be provided</span>
+  <br>
+  <br>
+  <div class="col-sm-9"></div>
+  <div class="col-sm-1"><button (click)="cancel()" class="btn btn-default">Cancel</button></div>
+  <div class="col-sm-1"><input type="submit" value="Add Question" class="btn btn-primary" [disabled]="!qForm.form.valid"></div>
+</form>
