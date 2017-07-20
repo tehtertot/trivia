@@ -11,9 +11,10 @@ export class FilterPipe implements PipeTransform {
     if (!value) { return value; }
 
     return value.filter(user => {
+      let p = user.percentage * 100;
       return user.username.toLowerCase().includes(searchStr.toLowerCase()) || 
       user.score.toString().includes(searchStr) ||
-      user.percentage.toString().includes(searchStr)
+      p.toString().includes(searchStr)
     })
   }
 

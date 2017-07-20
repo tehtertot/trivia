@@ -48,9 +48,20 @@ export class PlayComponent implements OnInit {
       }
       this.user.percentage = this.user.score/3;
       this._user.saveScore(this.user)
-      .then(() => { this._router.navigate(['/']);
-                    alert(`That was great, ${this.user.username}! Your score is ${this.user.score}/3 (${(this.user.score/3)*100}%).`);
-      })
+      .then(() => { 
+        this._router.navigate(['/']);
+        let msg = '';
+        if (this.user.score == 3) {
+          msg = "That was great";        }
+        else if (this.user.score == 2) {
+          msg = "Not bad";
+        }
+        else {
+          msg = "You might want to try again";
+        }
+        msg += `, ${this.user.username}! Your score is ${this.user.score}/3 (${(this.user.score/3)*100}%).`;
+        alert(msg);
+        })
       .catch((err) => { console.log(err); });
     }
   }
