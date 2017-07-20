@@ -2,10 +2,11 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { MainComponent } from './main/main.component';
-import { NewQuestionComponent } from './main/new-question/new-question.component';
-import { ScoresComponent } from './main/scores/scores.component';
+import { DisplayComponent } from './main/display/display.component';
+import { NewQuestionComponent } from './main/display/new-question/new-question.component';
+import { ScoresComponent } from './main/display/scores/scores.component';
 
-import { PlayComponent } from './play/play.component';
+import { PlayComponent } from './main/play/play.component';
 
 const routes: Routes = [
   { path: 'main', component: MainComponent, children: [

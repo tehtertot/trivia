@@ -14,6 +14,7 @@ import { NewQuestionComponent } from './main/new-question/new-question.component
 import { ScoresComponent } from './main/scores/scores.component';
 import { PlayComponent } from './play/play.component';
 import { FilterPipe } from './main/scores/filter.pipe';
+import { DisplayComponent } from './main/src/app/main/display/display.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FilterPipe } from './main/scores/filter.pipe';
     NewQuestionComponent,
     ScoresComponent,
     PlayComponent,
-    FilterPipe
+    FilterPipe,
+    DisplayComponent
   ],
   imports: [
     BrowserModule,
